@@ -8,15 +8,15 @@
         <input id="color" type="text" formControlName="color">
     </div>
     <div >
-        <label for="state">
+        <label for="state" *ngIf="!light">
             state(on/off)
           </label>
-        <input id="state" formControlName="state" type="checkbox">
+        <input id="state" formControlName="state" type="checkbox" *ngIf="!light">
     </div>
 
-    <button class="button" type="submit">ADD</button>
+    <button class="button" type="submit">{{ !light ? 'add':'update'}}</button>
   
 </form>
 
-<a routerLink="/" routerLinkActive="active">home</a>
+<a routerLink="/" routerLinkActive="active" *ngIf="!light" >home</a>
 

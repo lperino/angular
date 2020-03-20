@@ -4,8 +4,8 @@
     <fa-icon class="h1 p-0 m-0" [icon]= "['far','lightbulb']" [style]="!light.state ? 'color:' + light.color : 'color: yellow' "></fa-icon>
     <span >{{ light.id }}</span>
     <span [style]="!light.state ? 'color:' + light.color : 'color: white' ">{{ light.color }}</span>
-    <a class="btn btn-success w-25 mx-auto" (click)="light.state = !light.state">{{ light.state ? 'on' : 'off' }}</a>
-    <a href=""><fa-icon class="" [icon]= "['far','edit']"></fa-icon></a>
+    <a class="btn btn-success w-25 mx-auto" (click)="onClickLight()">{{ light.state ? 'on' : 'off' }}</a>
+    <a (click)="openEditModal()" ><fa-icon class="" [icon]= "['far','edit']"></fa-icon></a>
     <!-- <a href=""><fa-icon class="h1" [icon]= "['fas','delete']"></fa-icon></a> -->
     <a href=""><fa-icon class="" [icon]= "['far','trash-alt']"></fa-icon></a>
 </div>

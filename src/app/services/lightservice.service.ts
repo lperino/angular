@@ -1,5 +1,6 @@
+import { Light } from './../interfaces/lightinterface';
 import { Injectable } from '@angular/core';
-import { Light } from '../interfaces/lightinterface'
+
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +18,7 @@ export class LightserviceService {
        
       this.lights.push({
         
-        id : i,
+        id : i+1,
         color : randomColor,
         state : randomState
       }) 
@@ -47,4 +48,14 @@ export class LightserviceService {
     return light
     
   }
+  update(lightUpdate:Light){
+    var light: Light = this.lights.find(
+      (light: Light) => {
+          return light.id == lightUpdate.id
+      }
+    )
+    light.color = lightUpdate.color
+
+  }
+  
 }

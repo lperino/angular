@@ -1,0 +1,22 @@
+<form [formGroup]="addLightForm" (ngSubmit)="onSubmit(addLightForm.value)">
+
+
+    <div>
+        <label for="color">
+          color
+        </label>
+        <input id="color" type="text" formControlName="color">
+    </div>
+    <div >
+        <label for="state">
+            state(on/off)
+          </label>
+        <input id="state" formControlName="state" type="checkbox">
+    </div>
+
+    <button class="button" type="submit">ADD</button>
+  
+</form>
+
+<a routerLink="/" routerLinkActive="active">home</a>
+
